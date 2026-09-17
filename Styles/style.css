@@ -174,7 +174,7 @@ footer {
         word-break: break-word;
     }
 
-    .accordion-item summary {
+    .accordion-item > summary {
         padding: 0.75rem 1rem;
     }
 
@@ -301,3 +301,10 @@ summary.log-meta::-webkit-details-marker { display: none; }
 .log-body img { max-width: 100%; display: block; margin: 0.75rem 0; }
 .log-body table { border-collapse: collapse; width: 100%; margin: 0.75rem 0; font-size: 0.9rem; }
 .log-body th, .log-body td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+
+@media (max-width: 600px) {
+    .log-toggle {
+        left: 0;
+        margin-left: 0.5rem;
+    }
+}
