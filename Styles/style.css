@@ -66,7 +66,7 @@ h1 {
 }
 .accordion-item:last-child { border-bottom: 1px solid var(--border); }
 
-.accordion-item summary {
+.accordion-item > summary {
     font-family: "Bitcount Grid Single", sans-serif;  
     padding: 0.9rem 1.2rem;
     color: var(--text);
@@ -77,13 +77,14 @@ h1 {
     -ms-user-select: none;
     user-select: none;
 }
+
 .accordion-item summary::-webkit-details-marker { display: none; }
 
-.accordion-item summary::after {
+.accordion-item > summary::after {
     content: "+";
     float: right;
 }
-.accordion-item[open] summary::after {
+.accordion-item[open] > summary::after {
     content: "–";
 }
 
@@ -194,6 +195,18 @@ footer {
     .log-meta {
         gap: 0.5rem;
     }
+
+    .log-title {
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .log-line {
+        display: none;
+    }
 }
 
 *, *::before, *::after {
@@ -231,16 +244,21 @@ footer {
 }
 
 .log-entry {
+    margin: 0;
+    font-family: monospace;
     border-bottom: 1px dashed var(--border);
 }
 .log-entry:last-child { border-bottom: none; }
 
+.log-entry, .log-entry * {
+    font-family: monospace;
+}
+
 .log-meta {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 0.75rem;
     padding: 1rem 0;
-    font-family: monospace;
     font-size: 0.85rem;
 }
 
@@ -250,12 +268,18 @@ summary.log-meta {
 }
 summary.log-meta::-webkit-details-marker { display: none; }
 
-summary.log-meta::after {
+.log-toggle {
+    position: relative;
+    top: 1px;
+    left: -15px;
+}
+
+.log-toggle::after {
     content: "+";
     color: var(--accent);
     font-weight: bold;
 }
-.log-entry[open] summary.log-meta::after {
+.log-entry[open] .log-toggle::after {
     content: "–";
 }
 
@@ -267,11 +291,11 @@ summary.log-meta::after {
     flex: 1;
     height: 1px;
     background: var(--border);
+    margin-right: 15px;
 }
 
 .log-body {
     padding: 0 0 1rem;
-    font-family: monospace;
     font-size: 0.85rem;
 }
 .log-body img { max-width: 100%; display: block; margin: 0.75rem 0; }

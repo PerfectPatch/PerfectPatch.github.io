@@ -51,12 +51,12 @@ async function renderLogs() {
                             <time>${formatDate(entry.date)}</time>
                             <span class="log-title">${entry.title || ''}</span>
                             <span class="log-line"></span>
+                            <span class="log-toggle"></span>
                         </summary>
                         <div class="log-body">${marked.parse(entry.body)}</div>
                     </details>
                 `;
             }
-
             return `
                 <div class="log-entry">
                     <div class="log-meta">
