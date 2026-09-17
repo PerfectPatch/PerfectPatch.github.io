@@ -1,6 +1,11 @@
 const toggle = document.getElementById('theme-toggle');
 const root = document.documentElement;
 const saved = localStorage.getItem('theme');
+const mailLink = document.getElementById('mail-link');
+const user = 'your-address';
+const domain = 'proton.me';
+mailLink.href = `mailto:${user}@${domain}`;
+mailLink.textContent = `${user}@${domain}`;
 
 if (saved === 'light') {
     root.setAttribute('data-theme', 'light');
