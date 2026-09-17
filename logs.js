@@ -32,7 +32,7 @@ async function renderLogs() {
         const mdFiles = files.filter(f => f.name.endsWith('.md'));
 
         const entries = await Promise.all(mdFiles.map(async (file) => {
-            const raw = await (await fetch(file.download_url)).text();
+            const raw = await (await fetch(`${file.download_url}?t=${Date.now()}`)).text();
             const { data, body } = parseFrontmatter(raw);
             return { ...data, body };
         }));
@@ -50,7 +50,7 @@ async function renderLogs() {
             </article>
         `).join('');
     } catch (err) {
-        container.innerHTML = '<p>Не удалось загрузить записи.</p>';
+        container.innerHTML = '<p>Failed to load entries.</p>';
         console.error(err);
     }
 }
