@@ -1,0 +1,130 @@
+:root {
+    --bg: #000;
+    --text: #fff;
+    --text-dim: #ccc;
+    --accent: #ff0;
+    --border: #fff;
+    --grid-line: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="light"] {
+    --bg: #fff;
+    --text: #000;
+    --text-dim: #333;
+    --accent: #1B2CC1;
+    --border: #000;
+    --grid-line: rgba(0, 0, 0, 0.15);
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 1rem;
+    font-family: monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+header {
+    font-family: "Bitcount Grid Single", sans-serif;
+    position: relative;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 1.25rem;
+    right: 0;
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: monospace;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    background: var(--text);
+    color: var(--bg);
+}
+
+h1 {
+    padding-right: 1rem;
+}
+.accordion-item {
+    border: 1px solid var(--border);
+    border-bottom: none;
+    background: var(--bg);
+}
+.accordion-item:last-child { border-bottom: 1px solid var(--border); }
+
+.accordion-item summary {
+    font-family: "Bitcount Grid Single", sans-serif;  
+    padding: 0.9rem 1.2rem;
+    color: var(--text);
+    cursor: pointer;
+    list-style: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.accordion-item summary::-webkit-details-marker { display: none; }
+
+.accordion-item summary::after {
+    content: "+";
+    float: right;
+}
+.accordion-item[open] summary::after {
+    content: "–";
+}
+
+.accordion-content {
+    padding: 0 1.2rem 1.2rem;
+    color: var(--text-dim);  
+}
+
+.accordion-content p {
+    max-width: 65ch;
+}
+
+footer p {
+    text-align: right;
+}
+
+hr { 
+    border-color: var(--border);
+}
+
+.container{
+    display: flex;
+    align-items: flex-end;
+}
+
+.container p {
+    padding-right: 10px;
+    margin: 0;
+}
+
+.nickname {
+    color: var(--accent);
+    font-family: "Zen Dots", sans-serif;
+    font-size: 3rem;
+    margin: 0;
+    line-height: 0.85;
+}
+
+footer {
+    font-family: "Bitcount Grid Single", sans-serif;
+    margin-top: auto;
+}
+
+.notebook-grid {
+    flex: 1;
+    background-image: 
+        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
