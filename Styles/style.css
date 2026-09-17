@@ -180,6 +180,20 @@ footer {
     .notebook-grid {
         background-size: 20px 20px;
     }
+
+    .log-body table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .log-entry {
+        font-size: 0.85rem;
+    }
+
+    .log-meta {
+        gap: 0.5rem;
+    }
 }
 
 *, *::before, *::after {
@@ -222,9 +236,20 @@ footer {
     border-bottom: 1px dashed var(--border);
 }
 .log-entry:last-child { border-bottom: none; }
-.log-meta { display: flex; gap: 0.75rem; font-size: 0.85rem; margin-bottom: 0.4rem; }
+.log-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+}
+.log-meta::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
 .log-num { color: var(--accent); }
 .log-meta time { color: var(--text-dim); }
 .log-body img { max-width: 100%; display: block; margin: 0.75rem 0; }
-.log-body table { border-collapse: collapse; width: 100%; margin: 0.75rem 0; font-size: 0.9rem; }
 .log-body th, .log-body td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
