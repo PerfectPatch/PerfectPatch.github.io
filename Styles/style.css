@@ -306,5 +306,6 @@ summary.log-meta::-webkit-details-marker { display: none; }
     .log-toggle {
         left: 0;
         margin-left: 0.5rem;
+        top: -3px;
     }
 }
