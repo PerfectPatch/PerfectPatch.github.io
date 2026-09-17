@@ -3,6 +3,12 @@
 ## About
 Instead of a traditional portfolio layout, the site is organized into collapsible accordion sections. This keeps the page uncluttered — you see only section titles by default, and open just the one you're interested in, rather than scrolling through everything at once.
 
+## Screenshots
+
+| Dark theme | Light theme |
+|---|---|
+| ![Dark theme](./screenshots/dark-theme.png) | ![Light theme](./screenshots/light-theme.png) |
+
 ## Sections
 - **About me** — background and areas of focus
 - **Projects** — an overview of ongoing and past work
@@ -21,3 +27,4 @@ Plain HTML, CSS, and vanilla JavaScript — no frameworks, no build step. Hosted
 ## Live site
 
 [PerfectPatch.github.io](https://PerfectPatch.github.io)
+
