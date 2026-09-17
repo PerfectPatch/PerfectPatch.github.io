@@ -113,12 +113,12 @@ hr {
 .container p {
     padding-right: 10px;
     margin: 0;
-    font-family: "Bitcount Grid Single", sans-serif;
 }
 
 .container a {
     color: var(--text);
     text-decoration: underline;
+    font-family: "Bitcount Grid Single", sans-serif;
 }
 
 .container a:hover {
