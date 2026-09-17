@@ -42,7 +42,7 @@ async function renderLogs() {
         container.innerHTML = entries.map((entry, i) => `
             <article class="log-entry">
                 <div class="log-meta">
-                    <span class="log-num">№ ${String(entries.length - i).padStart(3, '0')}</span>
+                    <span class="log-num">#${String(entries.length - i).padStart(3, '0')}</span>
                     <time>${formatDate(entry.date)}</time>
                 </div>
                 <h3>${entry.title || ''}</h3>
