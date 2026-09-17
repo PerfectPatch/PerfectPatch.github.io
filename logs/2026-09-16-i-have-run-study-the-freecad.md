@@ -1,4 +1,4 @@
 ---
-title: "I have run study the FreeCAD "
+title: Started studying FreeCAD
 date: 2026-09-17
 ---
