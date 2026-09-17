@@ -39,16 +39,35 @@ async function renderLogs() {
 
         entries.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-        container.innerHTML = entries.map((entry, i) => `
-            <article class="log-entry">
-                <div class="log-meta">
-                    <span class="log-num">#${String(entries.length - i).padStart(3, '0')}</span>
-                    <time>${formatDate(entry.date)}</time>
+        container.innerHTML = entries.map((entry, i) => {
+            const num = String(entries.length - i).padStart(3, '0');
+            const hasBody = entry.body && entry.body.trim().length > 0;
+
+            if (hasBody) {
+                return `
+                    <details class="log-entry">
+                        <summary class="log-meta">
+                            <span class="log-num">#${num}</span>
+                            <time>${formatDate(entry.date)}</time>
+                            <span class="log-title">${entry.title || ''}</span>
+                            <span class="log-line"></span>
+                        </summary>
+                        <div class="log-body">${marked.parse(entry.body)}</div>
+                    </details>
+                `;
+            }
+
+            return `
+                <div class="log-entry">
+                    <div class="log-meta">
+                        <span class="log-num">#${num}</span>
+                        <time>${formatDate(entry.date)}</time>
+                        <span class="log-title">${entry.title || ''}</span>
+                        <span class="log-line"></span>
+                    </div>
                 </div>
-                <h3>${entry.title || ''}</h3>
-                <div class="log-body">${marked.parse(entry.body || '')}</div>
-            </article>
-        `).join('');
+            `;
+        }).join('');
     } catch (err) {
         container.innerHTML = '<p>Failed to load entries.</p>';
         console.error(err);
