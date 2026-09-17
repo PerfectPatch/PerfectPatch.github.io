@@ -16,15 +16,19 @@
     --grid-line: rgba(0, 0, 0, 0.15);
 }
 
+html {
+    background-color: #000;
+}
+
 body {
-    background-color: var(--bg);
-    color: var(--text);
-    margin: 1rem;
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+    margin: 0;
     font-family: monospace;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    transition: background-color 0.2s, color 0.2s;
 }
 
 header {
