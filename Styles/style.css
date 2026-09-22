@@ -323,7 +323,7 @@ summary.log-meta::-webkit-details-marker { display: none; }
 .slider-wrap {
     position: relative;
     max-width: 480px;
-    margin: 0.75rem 0;
+    margin: 0.75rem auto;
 }
 .log-body .slider {
     display: flex;
