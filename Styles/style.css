@@ -307,6 +307,21 @@ summary.log-meta::-webkit-details-marker { display: none; }
     font-size: 1em;
     margin: 1.5em 0 0.5em;
 }
+.log-body a {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.log-body .img-row {
+  display: flex;
+  gap: 10px;
+  margin: 0.75rem 0;
+}
+.log-body .img-row img {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+}
 
 @media (max-width: 600px) {
     .log-toggle {
