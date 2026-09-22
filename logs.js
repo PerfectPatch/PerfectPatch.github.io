@@ -16,6 +16,27 @@ function parseFrontmatter(raw) {
     return { data, body };
 }
 
+function initSliders(root = document) {
+  root.querySelectorAll('.slider').forEach(slider => {
+    if (slider.dataset.ready) return;
+    slider.dataset.ready = '1';
+
+    const wrap = document.createElement('div');
+    wrap.className = 'slider-wrap';
+    slider.before(wrap);
+    wrap.append(slider);
+
+    [['prev', '<', -1], ['next', '>', 1]].forEach(([cls, label, dir]) => {
+      const btn = document.createElement('button');
+      btn.className = `slider-btn ${cls}`;
+      btn.textContent = label;
+      btn.onclick = () =>
+        slider.scrollBy({ left: dir * slider.clientWidth, behavior: 'smooth' });
+      wrap.append(btn);
+    });
+  });
+}
+
 function formatDate(iso) {
     const d = new Date(iso);
     if (isNaN(d)) return iso;
@@ -68,6 +89,8 @@ async function renderLogs() {
                 </div>
             `;
         }).join('');
+
+        initSliders(container);
     } catch (err) {
         container.innerHTML = '<p>Failed to load entries.</p>';
         console.error(err);

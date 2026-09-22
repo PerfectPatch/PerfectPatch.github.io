@@ -301,7 +301,7 @@ summary.log-meta::-webkit-details-marker { display: none; }
 .log-body img { max-width: 100%; display: block; margin: 0.75rem 0; }
 .log-body table { border-collapse: collapse; width: 100%; margin: 0.75rem 0; font-size: 0.9rem; }
 .log-body th, .log-body td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
-.log-body h2, .log-body h2, .log-body h3 {
+.log-body h1, .log-body h2, .log-body h3 {
     border-bottom: none;
     color: var(--accent);
     font-size: 1em;
@@ -312,16 +312,37 @@ summary.log-meta::-webkit-details-marker { display: none; }
     text-decoration: underline;
 }
 
-.log-body .img-row {
-  display: flex;
-  gap: 10px;
-  margin: 0.75rem 0;
+.slider-wrap {
+    position: relative;
+    max-width: 65ch;
+    margin: 0.75rem 0;
 }
-.log-body .img-row img {
-  flex: 1;
-  min-width: 0;
-  margin: 0;
+.log-body .slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
 }
+.log-body .slider::-webkit-scrollbar { display: none; }
+.log-body .slider img {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    margin: 0;
+}
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    font-family: monospace;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+}
+.slider-btn:hover { background: var(--text); color: var(--bg); }
+.slider-btn.prev { left: 0.5rem; }
+.slider-btn.next { right: 0.5rem; }
 
 @media (max-width: 600px) {
     .log-toggle {
