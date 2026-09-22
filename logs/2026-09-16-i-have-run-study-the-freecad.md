@@ -10,7 +10,7 @@ I wanted to learn 3D modeling so I could design my own parts for DIY projects an
 
 I followed [Deltahedra's tutorial](https://www.youtube.com/watch?v=KmtqNaGPiiQ&list=PLvYFiDTG74hrGN8h51IQZte2KRc4TnZep&index=3) and built my first part: a bike stem. The video explains a lot of the finer details.
 
-<div class="img-row">
+<div class="slider">
   <img src="/assets/img/screenshot-2026-09-22-190256.png" alt="Detail left side">
   <img src="/assets/img/screenshot-2026-09-22-190359.png" alt="Detail right side">
 </div>
