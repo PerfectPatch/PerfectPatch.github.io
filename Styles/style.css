@@ -295,9 +295,16 @@ summary.log-meta::-webkit-details-marker { display: none; }
 }
 
 .log-body {
+    max-width: 70ch;
+    margin: 0 auto;
     padding: 0 0 1rem;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
 }
+
+.log-body p {
+    max-width: none;
+}
+
 .log-body img { max-width: 100%; display: block; margin: 0.75rem 0; }
 .log-body table { border-collapse: collapse; width: 100%; margin: 0.75rem 0; font-size: 0.9rem; }
 .log-body th, .log-body td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
