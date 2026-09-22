@@ -303,19 +303,9 @@ summary.log-meta::-webkit-details-marker { display: none; }
 .log-body th, .log-body td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
 .log-body h2, .log-body h2, .log-body h3 {
     border-bottom: none;
-    color: #e6e600;
+    color: var(--accent);
     font-size: 1em;
     margin: 1.5em 0 0.5em;
-}
-
-.log-body p:has(img + img) {
-  display: flex;
-  gap: 10px;
-}
-.log-body p:has(img + img) img {
-  flex: 1;
-  min-width: 0;
-  margin: 0;
 }
 
 @media (max-width: 600px) {
