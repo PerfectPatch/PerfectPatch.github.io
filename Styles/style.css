@@ -322,7 +322,7 @@ summary.log-meta::-webkit-details-marker { display: none; }
 
 .slider-wrap {
     position: relative;
-    max-width: none;
+    max-width: 480зч;
     margin: 0.75rem 0;
 }
 .log-body .slider {
