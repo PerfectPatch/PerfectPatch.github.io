@@ -97,4 +97,12 @@ async function renderLogs() {
     }
 }
 
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.mv-load');
+  if (!btn) return;
+  const mv = btn.closest('model-viewer');
+  mv.src = mv.dataset.src;
+  btn.remove();
+});
+
 renderLogs();

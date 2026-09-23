@@ -352,6 +352,28 @@ summary.log-meta::-webkit-details-marker { display: none; }
 .slider-btn.prev { left: 0.5rem; }
 .slider-btn.next { right: 0.5rem; }
 
+.log-body model-viewer {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 1 / 1;
+    margin: 0.75rem auto;
+    background: transparent;
+}
+.mv-load {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    font-family: monospace;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+}
+.mv-load:hover { background: var(--text); color: var(--bg); }
+
 @media (max-width: 600px) {
     .log-toggle {
         left: 0;
