@@ -10,10 +10,12 @@ I wanted to learn 3D modeling so I could design my own parts for DIY projects an
 
 I followed [Deltahedra's tutorial](https://www.youtube.com/watch?v=KmtqNaGPiiQ&list=PLvYFiDTG74hrGN8h51IQZte2KRc4TnZep&index=3) and built my first part: a bike stem. The video explains a lot of the finer details.
 
-<div class="slider">
-  <img src="/assets/img/detail_leftS.png" alt="Detail left side">
-  <img src="/assets/img/detail_rightS.png" alt="Detail right side">
-</div>
+<model-viewer data-src="/assets/models/bike-stem.glb"
+  poster="/assets/img/img1.webp"
+  alt="Bike stem 3D model"
+  camera-controls>
+  <button slot="poster" class="mv-load">View in 3D</button>
+</model-viewer>
 
 ## Where I got stuck
 
