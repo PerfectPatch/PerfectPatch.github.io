@@ -359,7 +359,10 @@ summary.log-meta::-webkit-details-marker { display: none; }
     aspect-ratio: 1 / 1;
     margin: 0.75rem auto;
     background: transparent;
+    --poster-color: transparent;
+    --progress-bar-color: var(--accent);
 }
+
 .mv-load {
     position: absolute;
     bottom: 0.5rem;
