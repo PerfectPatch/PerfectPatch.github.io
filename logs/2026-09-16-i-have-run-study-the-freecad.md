@@ -22,3 +22,7 @@ I first tried another video from the same channel, which skipped over some detai
 ## Result
 
 I've got a decent handle on the basic tools. I want to stick with tutorials a bit longer, though I could probably manage on my own. I really enjoyed it, and I'm happy with how the part turned out.
+
+### Links
+<a href="/assets/models/bike-stem.stl" download>Download STL</a> ·
+<a href="/assets/models/bike-stem.step" download>Download STEP</a>
