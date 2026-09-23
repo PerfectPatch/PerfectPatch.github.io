@@ -98,11 +98,14 @@ async function renderLogs() {
 }
 
 document.addEventListener('click', e => {
-  const btn = e.target.closest('.mv-load');
-  if (!btn) return;
-  const mv = btn.closest('model-viewer');
-  mv.src = mv.dataset.src;
-  btn.remove();
+    const btn = e.target.closest('.mv-load');
+    if (!btn) return;
+    const box = btn.closest('.model-3d');
+    const mv = document.createElement('model-viewer');
+    mv.src = box.dataset.src;
+    mv.alt = '3D model';
+    mv.setAttribute('camera-controls', '');
+    box.replaceChildren(mv);
 });
 
 renderLogs();
