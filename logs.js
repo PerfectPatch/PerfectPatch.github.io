@@ -91,10 +91,32 @@ async function renderLogs() {
         }).join('');
 
         initSliders(container);
+        initCodeBlocks(container);
     } catch (err) {
         container.innerHTML = '<p>Failed to load entries.</p>';
         console.error(err);
     }
+}
+
+function initCodeBlocks(root = document) {
+    root.querySelectorAll('.log-body pre code').forEach(code => {
+        const pre = code.parentElement;
+        if (pre.dataset.ready) return;
+        pre.dataset.ready = '1';
+
+        const match = code.className.match(/language-(\S+)/);
+        if (match) pre.dataset.lang = match[1];
+
+        const btn = document.createElement('button');
+        btn.className = 'copy-btn';
+        btn.textContent = 'copy';
+        btn.addEventListener('click', async () => {
+            await navigator.clipboard.writeText(code.textContent);
+            btn.textContent = 'copied';
+            setTimeout(() => btn.textContent = 'copy', 1500);
+        });
+        pre.appendChild(btn);
+    });
 }
 
 document.addEventListener('click', e => {
@@ -108,21 +130,5 @@ document.addEventListener('click', e => {
     box.replaceChildren(mv);
 });
 
-document.querySelectorAll('.log-body pre code').forEach(code => {
-    const pre = code.parentElement;
-
-    const match = code.className.match(/language-(\S+)/);
-    if (match) pre.dataset.lang = match[1];
-
-    const btn = document.createElement('button');
-    btn.className = 'copy-btn';
-    btn.textContent = 'copy';
-    btn.addEventListener('click', async () => {
-        await navigator.clipboard.writeText(code.textContent);
-        btn.textContent = 'copied';
-        setTimeout(() => btn.textContent = 'copy', 1500);
-    });
-    pre.appendChild(btn);
-});
 
 renderLogs();
