@@ -192,10 +192,6 @@ footer {
         font-size: 0.85rem;
     }
 
-    .log-meta {
-        gap: 0.5rem;
-    }
-
     .log-title {
         flex: 1;
         min-width: 0;
@@ -304,6 +300,7 @@ summary.log-meta::-webkit-details-marker { display: none; }
 
 .log-body p {
     max-width: none;
+    line-height: 1.6;
 }
 
 .log-body img { max-width: 100%; display: block; margin: 0.75rem 0; }
@@ -340,16 +337,15 @@ summary.log-meta::-webkit-details-marker { display: none; }
 
 .log-body code {
     background-color: color-mix(in srgb, currentColor 10%, transparent);
-    border-radius: 4px;
     padding: 0.05em 0.35em;
     white-space: nowrap;
 }
 
 .log-body pre {
+    position: relative;
     background-color: color-mix(in srgb, currentColor 6%, transparent);
     border: 1px solid var(--accent);
-    border-radius: 6px;
-    padding: 1em;
+    padding: 2.2em 1em 1em; /* сверху место под подпись и кнопку */
     margin: 1em 0;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
@@ -361,8 +357,32 @@ summary.log-meta::-webkit-details-marker { display: none; }
     white-space: inherit;
 }
 
-.log-body p {
-    line-height: 1.6;
+.log-body pre[data-lang]::before {
+    content: attr(data-lang);
+    position: absolute;
+    top: 0.5em;
+    left: 1em;
+    font-size: 0.75em;
+    opacity: 0.6;
+    text-transform: uppercase;
+}
+
+.log-body .copy-btn {
+    position: absolute;
+    top: 0.4em;
+    right: 0.6em;
+    font: inherit;
+    font-size: 0.75em;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 0.1em 0.5em;
+    cursor: pointer;
+}
+
+.log-body .copy-btn:hover {
+    background: var(--text);
+    color: var(--bg);
 }
 
 .slider-btn {
@@ -410,5 +430,9 @@ summary.log-meta::-webkit-details-marker { display: none; }
         left: 0;
         margin-left: 0.5rem;
         top: -3px;
+    }
+
+    .log-meta {
+        gap: 0.5rem;
     }
 }

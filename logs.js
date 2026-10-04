@@ -108,4 +108,21 @@ document.addEventListener('click', e => {
     box.replaceChildren(mv);
 });
 
+document.querySelectorAll('.log-body pre code').forEach(code => {
+    const pre = code.parentElement;
+
+    const match = code.className.match(/language-(\S+)/);
+    if (match) pre.dataset.lang = match[1];
+
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'copy';
+    btn.addEventListener('click', async () => {
+        await navigator.clipboard.writeText(code.textContent);
+        btn.textContent = 'copied';
+        setTimeout(() => btn.textContent = 'copy', 1500);
+    });
+    pre.appendChild(btn);
+});
+
 renderLogs();
