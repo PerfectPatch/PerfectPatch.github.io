@@ -338,25 +338,31 @@ summary.log-meta::-webkit-details-marker { display: none; }
     margin: 0;
 }
 
-.log-body code, .log-body pre {
-    background-color: rgba(255, 255, 255, 0.06);
-    border: 1px solid var(--accent);
+.log-body code {
+    background-color: rgba(255, 255, 255, 0.08);
     border-radius: 4px;
-    padding: 0.15em 0.4em;
-    overflow-wrap: anywhere;
+    padding: 0.05em 0.35em;
+    white-space: nowrap;
 }
 
 .log-body pre {
-    white-space: pre-wrap;
-    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--accent);
     border-radius: 6px;
+    padding: 1em;
     margin: 1em 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
 }
 
 .log-body pre code {
     background: none;
-    border: none;
     padding: 0;
+    white-space: inherit;
+}
+
+.log-body p {
+    line-height: 1.6;
 }
 
 .slider-btn {
