@@ -22,5 +22,5 @@ Plain HTML, CSS, and vanilla JavaScript — no frameworks, no build step. Hosted
 
 ## Live site
 
-[PerfectPatch.github.io](https://kzbj.github.io)
+[kzbj.github.io](https://kzbj.github.io)
 
