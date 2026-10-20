@@ -1,8 +1,4 @@
 # Portfolio site
-
-## About
-Instead of a traditional portfolio layout, the site is organized into collapsible accordion sections. This keeps the page uncluttered — you see only section titles by default, and open just the one you're interested in, rather than scrolling through everything at once.
-
 ## Screenshots
 
 | Dark theme | Light theme |
